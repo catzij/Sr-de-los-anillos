@@ -1,5 +1,9 @@
-public class App {
+package principal;
+import herramientas.*;
+public class Principal {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        partida juego = new partida();
+        juego.jugar();
+        
     }
 }
