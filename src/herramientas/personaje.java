@@ -10,11 +10,12 @@ public class personaje {
 
     private static int instanciasPersonajes;
 
-    public personaje(int vida, int armadura, int ataque, String nombre, boolean esHeroe) {        
+    public personaje(int vida, int armadura, int ataque, String nombre, boolean esHeroe) {
+        
         this.vida = vida;
         this.ataque = ataque;
         this.armadura = armadura;
-        this.nombre = nombre;        
+        this.nombre = nombre;
         this.esHeroe = esHeroe;
         instanciasPersonajes++;
     }

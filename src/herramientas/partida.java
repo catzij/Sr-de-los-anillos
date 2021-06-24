@@ -29,6 +29,7 @@ public class partida {
             }
 
             System.out.println("\nPresentando ejercito de "+tempo);
+            asterisco(40);
             //ejemplo con operador ternario
             /**System.out.println("\nPresentando ejercito de "+
                             (ejercito[0] instanceof Bestias?"Bestias":"Herores")
@@ -45,22 +46,57 @@ public class partida {
     }
 
     public void jugar(){
-        System.out.println("Bienvenido al juego del señor de los anillos: \n\n");
+
+        asterisco(50);
+        System.out.println("Bienvenido al juego del señor de los anillos: ");
+        asterisco(50);
         
         this.inicializarHeroes();
         this.inicializarBestias();
-
-        this.presentarPersonajes(ejercitoBestias);
-        this.presentarPersonajes(ejercitoHeroes);
-
-        System.out.println("\n\n\n");
-        this.pelea();
         
+        this.presentarPersonajes(ejercitoBestias);
+        
+        this.presentarPersonajes(ejercitoHeroes);
+        
+        asterisco(50);
+        this.pelea();
+        asterisco(50);
     }
 
     public void pelea(){
-        ejercitoBestias[0].recibirAtaque(ejercitoHeroes[0]);
-        ejercitoHeroes[0].recibirAtaque(ejercitoBestias[0]);
+        
+        for (int j = 0; j < ejercitoBestias.length; j++) {
+            do{            
+                ejercitoBestias[j].recibirAtaque(ejercitoHeroes[j]);
+                ejercitoHeroes[j].recibirAtaque(ejercitoBestias[j]);                           
+
+            }while(ejercitoBestias[j].vida>0 && ejercitoHeroes[j].vida>0);
+            ganaPunto(j);
+        }
+        
+        
+    }
+
+    public void ganaPunto(int i){        
+        int vidaBestia=0;
+        int vidaHeroe=0;
+    
+            vidaBestia = ejercitoBestias[i].vida;                
+        
+            vidaHeroe = ejercitoHeroes[i].vida;
+        
+        if (vidaBestia<=0) {             
+            asterisco(40);
+            System.out.println("el equipo Bestia perdio esta ronda");
+            System.out.println("el equipo HEROE GANO esta ronda");
+            asterisco(40);
+        }
+        if (vidaHeroe<=0) {
+            asterisco(40);            
+            System.out.println("el equipo Heroe perdio esta ronda");            
+            System.out.println("el equipo BESTIA GANO esta ronda");
+            asterisco(40);
+        }        
     }
 
     public void inicializarHeroes(){
@@ -76,10 +112,7 @@ public class partida {
                     break;
                 case 2:
                     ejercitoHeroes[i] = new hobbit("Hobbit "+hobbit.getInstancias());
-                    break;
-                default:
-                    ejercitoHeroes[i] = new elfo("Elfo "+elfo.getInstancias());
-                    break;
+                    break;                
             }
         }
     }
@@ -94,12 +127,16 @@ public class partida {
                     break;
                 case 1:
                     ejercitoBestias[i] = new orcos("Orco "+orcos.getInstancias());
-                    break;
-                default:
-                    ejercitoBestias[i] = new orcos("Orco "+orcos.getInstancias());
-                    break;
+                    break;             
             }
         }
+    }
+
+    public void asterisco(int cantidad){
+        for (int i = 0; i < cantidad; i++) {
+            System.out.print("*");
+        }
+        System.out.println("");
     }
     
 }

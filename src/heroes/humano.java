@@ -12,5 +12,10 @@ public class humano extends heroe {
     public static int getInstancias(){
         return contadorInstancias;
     }
+
+    @Override
+    public void saludar(){
+        System.out.println("Hola soy un Humano y me llamo   " + this.nombre);
+    }
     
 }

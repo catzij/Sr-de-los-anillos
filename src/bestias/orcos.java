@@ -10,6 +10,6 @@ public class orcos extends bestia {
 
     public orcos(String nombre){
         super(300,45,nombre);
+        contadorInstancias++;
     }
-    
 }

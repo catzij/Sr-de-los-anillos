@@ -10,6 +10,7 @@ public class trasgos extends bestia {
 
     public trasgos(String nombre){
         super(325,46,nombre);
+        contadorInstancias++;
     }
     
 }

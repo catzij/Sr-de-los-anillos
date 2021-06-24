@@ -8,7 +8,7 @@ public class heroe extends personaje {
     private static int instanciasHeroes;
 
     public heroe(int vida, int armadura, String nombre){
-        super(vida, armadura, ataqueMaximo, nombre,true);
+        super(vida, armadura, ataqueMaximo, nombre, true);
         heroe.instanciasHeroes++;
     }
 

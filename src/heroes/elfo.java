@@ -1,12 +1,18 @@
 package heroes;
 
 import herramientas.*;
+
+
+
 import bestias.*;
 
 public class elfo extends heroe{
 
+    private static int instanciaElfo;
+
     public elfo(String nombre){
         super(250, 60, nombre);
+        instanciaElfo++;
     }
 
     @Override
@@ -23,6 +29,10 @@ public class elfo extends heroe{
         }
         
         return this.getAtaque();
+    }
+
+    public static int getInstancias(){
+        return instanciaElfo;
     }
     
 }

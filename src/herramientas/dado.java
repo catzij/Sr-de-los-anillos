@@ -8,7 +8,7 @@ public class dado {
         for (int i = 1; i <= cantDados; i++) {
             dado =(int) Math.floor(Math.random()*(valorMaximo-valorMinimo+1)+valorMinimo);
             if (mostrarMensaje)
-                System.out.println("Se lanzó el "+i+" dado y su resultado fue: "+ dado);
+                System.out.println("Se lanzó el  dado "+i+" y su resultado fue: "+ dado);
             if (resultado < dado)
                 resultado = dado;
         }
